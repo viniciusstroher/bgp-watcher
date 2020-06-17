@@ -9,6 +9,8 @@ RUN apk add python3 \
 	&& pip install --user ansible \
 	&& apk add openssh-client \
 	&& apk add sshpass \
+	&& apk add mlocate \
+	&& updatedb \
 	&& ln -s /root/.local/bin/ansible-playbook /bin \
 	&& ln -s /root/.local/bin/ansible /bin
 
