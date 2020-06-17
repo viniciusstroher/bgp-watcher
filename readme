@@ -16,3 +16,31 @@ https://www.eve-ng.net/ emulador de dispositivos de net
 
 criar compose da solucao contendo os containers
 
+
+#--no-cache para revalidar todos os intalls
+#ansible_path /root/.local/bin/ansible
+
+
+
+
+ansible_path /root/.local/bin/ansible
+
+#build docker build -t bgp-watcher -f Dockerfile .
+#ansible_path /root/.local/bin/ansible
+#docker run -dit --name bgp-watcher bgp-watcher && docker exec -it bgp-watcher sh
+#docker stop bgp-watcher && docker rm bgp-watcher
+
+#CMD [ "node", "server.js" ]
+
+
+ansible centos -m <module_name> -a "<module options>""
+
+ansible localhost -c local -i ./hosts -m get_url \
+  -a "url=https://br.wordpress.org/wordpress-4.9-pt_BR.tar.gz 
+ 
+
+ ansible centos -i ./hosts -m get_url -a "url=https://br.wordpress.org/wordpress-4.9-pt_BR.tar.gz"
+ 
+
+
+ ansible centos -i ./hosts -m ping

@@ -7,9 +7,9 @@ RUN apk add python3 \
 	&& apk add --no-cache py-pip \
 	&& apk add py3-setuptools \
 	&& pip install --user ansible \
-	&& mkdir -p /etc/ansible
+	&& apk add openssh-client \
+	&& apk add sshpass \
+	&& ln -s /root/.local/bin/ansible /bin
 
-#build docker build -t bgp-watcher -f Dockerfile .
-#ansible_path /root/.local/bin/ansible
-#docker run -dit --name bgp-watcher bgp-watcher && docker exec -it bgp-watcher sh
-#docker stop bgp-watcher && docker rm bgp-watcher
+WORKDIR /etc/ansible
+COPY config /etc/ansible
