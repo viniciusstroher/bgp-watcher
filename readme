@@ -1,0 +1,18 @@
+check ->  check bgp - ok
+
+https://www.eve-ng.net/ emulador de dispositivos de net
+
+- Subir ansible (´pip)
+	instalar ansible - pip install --user ansible || git+https://github.com/ansible/ansible.git@devel
+	
+	https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-with-pip
+
+	https://giovannireisnunes.wordpress.com/2017/12/01/utilizando-o-ansible-parte-1/
+
+
+
+- conenctar no cisco (ios)
+- rodar comandos e coletar ( rodar modulos nos hosts)
+
+criar compose da solucao contendo os containers
+
