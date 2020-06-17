@@ -33,14 +33,12 @@ ansible_path /root/.local/bin/ansible
 #CMD [ "node", "server.js" ]
 
 
-ansible centos -m <module_name> -a "<module options>""
+COMANDOS
 
+ansible centos -m <module_name> -a "<module options>""
 ansible localhost -c local -i ./hosts -m get_url \
   -a "url=https://br.wordpress.org/wordpress-4.9-pt_BR.tar.gz 
- 
-
  ansible centos -i ./hosts -m get_url -a "url=https://br.wordpress.org/wordpress-4.9-pt_BR.tar.gz"
- 
-
-
  ansible centos -i ./hosts -m ping
+ansible centos -i ./hosts -m shell "ls /var/www/html/rcx"
+ansible centos -i ./hosts -m shell -a "ls /var/www/html/rcx"
