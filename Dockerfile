@@ -10,6 +10,8 @@ RUN apk add python3 \
 	&& apk add openssh-client \
 	&& apk add sshpass \
 	&& apk add mlocate \
+	&& apk add vim \
+	&& apk add busybox-extras \
 	&& updatedb \
 	&& ln -s /root/.local/bin/ansible-playbook /bin \
 	&& ln -s /root/.local/bin/ansible /bin

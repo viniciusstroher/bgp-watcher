@@ -1,4 +1,8 @@
- tasks:
-  - name: run show version on remote devices
-    ios_command:
-      commands: show ip bgp summary
+hosts: ios_devices
+  connection: local
+  tasks:
+    - name: "Cisco IOS run show version"
+      ios_command:
+        commands: show version
+        username: admin
+        password: admin

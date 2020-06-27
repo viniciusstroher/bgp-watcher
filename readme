@@ -42,3 +42,13 @@ ansible localhost -c local -i ./hosts -m get_url \
  ansible centos -i ./hosts -m ping
 ansible centos -i ./hosts -m shell "ls /var/www/html/rcx"
 ansible centos -i ./hosts -m shell -a "ls /var/www/html/rcx"
+
+
+ansible-playbook -i ./hosts bgp-ios.yml
+
+ansible huller-swt -i ./hosts -m ping
+
+ansible-playbook bgp-ios.yml
+ansible-playbook -i ./hosts bgp-ios.yml -u admin -k
+
+busybox-extras telnet 192.168.0.36 22
