@@ -1,0 +1,19 @@
+---
+- hosts: ios
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: RUN 'Getinfos'
+    ios_facts:
+      gather_subset: all
+    vars:
+      ansible_persistent_log_messages: true
+      ansible_connection: network_cli
+      ansible_network_os: ios
+      ansible_user: admin
+      ansible_password: admin
+      ansible_become: yes
+      ansible_become_method: enable
+      ansible_become_password: admin
+

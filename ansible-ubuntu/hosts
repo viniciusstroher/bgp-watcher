@@ -1,0 +1,9 @@
+[all:vars]
+ansible_connection = local
+become=yes
+timeout=10
+
+[ios]
+192.168.0.40 #ansible_host=192.168.0.40 ansible_ssh_user=admin ansible_ssh_pass=admin ansible_ssh_common_args="-o HostKeyAlgorithms=ssh-rsa -o KexAlgorithms=diffie-hellman-group1-sha1 -o Ciphers=aes256-cbc,3des-cbc -o MACs=hmac-md5,hmac-sha2-512"
+
+192.168.0.36 #ansible_host=192.168.0.36 ansible_ssh_user=admin ansible_ssh_pass=admin ansible_ssh_common_args="-o HostKeyAlgorithms=ssh-rsa -o KexAlgorithms=diffie-hellman-group1-sha1 -o Ciphers=aes256-cbc,3des-cbc -o MACs=hmac-md5,hmac-sha2-512"
