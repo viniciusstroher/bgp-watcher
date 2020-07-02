@@ -1,0 +1,26 @@
+python3 get-pip.py --user
+pip install --user git+https://github.com/ansible/ansible.git@stable-2.5
+ln -s /root/.ansible/bin/ansible /bin/ansible
+ln -s /root/.ansible/bin/ansible-playbook /bin/ansible-playbook
+
+
+
+/etc/ssh/ssh_config
+add>
+
+KexAlgorithms diffie-hellman-group1-sha1,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1
+Ciphers 3des-cbc,blowfish-cbc,aes128-cbc,aes128-ctr,aes256-ctr
+
+ssh-keygen -A
+
+service ssh restart
+
+mkdir -p /etc/ansible
+
+#copia
+
+bgp-ios.yml
+ansible.cfg
+
+
+ansible-playbook -i ./hosts bgp-ios.yml -vvv

@@ -7,6 +7,12 @@
   - name: RUN 'Getinfos'
     ios_facts:
       gather_subset: all
+  tasks:
+  - name: RUN 'Bgp Sumary'
+    ios_command:
+      commands:
+          - show bgp summary
+
     vars:
       ansible_persistent_log_messages: true
       ansible_connection: network_cli

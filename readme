@@ -52,3 +52,28 @@ ansible-playbook bgp-ios.yml
 ansible-playbook -i ./hosts bgp-ios.yml -u admin -k
 
 busybox-extras telnet 192.168.0.36 22
+
+
+ssh -c aes256-cbc admin@192.168.0.40
+
+
+
+
+
+
+/etc/ssh/ssh_config
+add>
+
+KexAlgorithms diffie-hellman-group1-sha1,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1
+Ciphers 3des-cbc,blowfish-cbc,aes128-cbc,aes128-ctr,aes256-ctr
+
+ssh-keygen -A
+
+service ssh restart
+
+
+
+
+
+
+ansible-playbook -i ./hosts bgp-ios.yml -vvvv

@@ -1,57 +1,15 @@
-check ->  check bgp - ok
-
-https://www.eve-ng.net/ emulador de dispositivos de net
-
-- Subir ansible (´pip)
-	instalar ansible - pip install --user ansible || git+https://github.com/ansible/ansible.git@devel
-	
-	https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-with-pip
-
-	https://giovannireisnunes.wordpress.com/2017/12/01/utilizando-o-ansible-parte-1/
+pip install virtualenv
 
 
+cd /root
+virtualenv ansible
+source ansible/bin/activate
 
-- conenctar no cisco (ios)
-- rodar comandos e coletar ( rodar modulos nos hosts)
+pip install ansible
+pip install paramiko
 
-criar compose da solucao contendo os containers
+source ansible/bin/activate
+export ANSIBLE_DEBUG=1
+export ANSIBLE_LOG_PATH=/etc/ansible/ansible.log
 
-
-#--no-cache para revalidar todos os intalls
-#ansible_path /root/.local/bin/ansible
-
-
-
-
-ansible_path /root/.local/bin/ansible
-
-#build docker build -t bgp-watcher -f Dockerfile .
-#ansible_path /root/.local/bin/ansible
-#docker run -dit --name bgp-watcher bgp-watcher && docker exec -it bgp-watcher sh
-#docker stop bgp-watcher && docker rm bgp-watcher
-
-#CMD [ "node", "server.js" ]
-
-
-COMANDOS
-
-ansible centos -m <module_name> -a "<module options>""
-ansible localhost -c local -i ./hosts -m get_url \
-  -a "url=https://br.wordpress.org/wordpress-4.9-pt_BR.tar.gz 
- ansible centos -i ./hosts -m get_url -a "url=https://br.wordpress.org/wordpress-4.9-pt_BR.tar.gz"
- ansible centos -i ./hosts -m ping
-ansible centos -i ./hosts -m shell "ls /var/www/html/rcx"
-ansible centos -i ./hosts -m shell -a "ls /var/www/html/rcx"
-
-
-ansible-playbook -i ./hosts bgp-ios.yml
-
-ansible huller-swt -i ./hosts -m ping
-
-ansible-playbook bgp-ios.yml
-ansible-playbook -i ./hosts bgp-ios.yml -u admin -k
-
-busybox-extras telnet 192.168.0.36 22
-
-
-ssh -c aes256-cbc admin@192.168.0.40
+ansible ios -i /etc/ansible/hosts -m shell -a "uname"

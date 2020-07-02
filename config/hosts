@@ -1,3 +1,10 @@
-[ios_devices]
-192.168.0.36
+[ios]
 192.168.0.40
+i192.168.0.36
+
+[ios:vars]
+ansible_become=yes
+ansible_become_method=enable
+ansible_network_os=ios
+ansible_user=admim
+ansible_password=admin 
